@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World data visualization</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 900;
+        }
+        .color{
+            color:white;
+        }
+        .transform{
+            text-transform: uppercase;
+        }
+        .glob{
+           background:linear-gradient(rgba(131, 133, 131, 0.4),rgba(31, 32, 32, 0.4)),url(./img/globe.jpg);
+           background-repeat: no-repeat;
+           background-size: cover;
+
+           text-align: center;
+           padding:60px;
+           
+        }
+
+        h1{
+            text-transform: uppercase;
+            letter-spacing: 4px;            
+        }
+        button{
+            background-color: rgba(144, 23, 168, 0.993);
+            font-weight: bold;
+            padding:10px;
+            border: none;
+            border-radius: 1px;
+            margin-bottom: 10px;
+        }
+        input{
+            border-radius: 20px;
+            border:none;
+            padding:10px;
+            text-align: center;
+            width:50%;
+        }
+        .countries{
+            background-color: rgb(250, 241, 121);
+            padding:40px 5%;
+        }
+       
+        .rowDiv,.rowStartDiv{
+          display: flex;
+          
+        }
+        .tdDiv {           
+           max-width: 13%;
+           color: white;
+           min-width: 13%;  
+           font-weight: bolder;      
+           text-align: center;
+           box-shadow: 1px 8px 10px rgb(116, 114, 114);
+           border-radius: 5px;
+                      
+           background:linear-gradient(rgba(131, 133, 131, 0.4),rgba(31, 32, 32, 0.4)),url(./img/map_image.jpg);           
+           background-size: cover;  
+           max-height: 120px; 
+           min-height: 100px;
+           margin-right:4%;
+           margin-top: 40px; 
+           padding-top:60px; 
+           font-size: 14px;
+           font-weight: 900;
+           
+        }
+      
+        .active,button:hover{
+            background: rgb(91, 2, 110);
+            padding: 11px;
+        }
+        .fa-search{
+            font-size: 24px;
+            padding:10px;
+        }
+
+      
+        @media screen and (max-width: 900px) {
+            button{
+                margin-bottom: 10px;
+            }
+            .rowDiv{
+                flex-wrap: wrap;  
+                           
+
+            }
+            .tdDiv{
+                flex-wrap: wrap;               
+                max-width: 28% !important;
+                min-width: 26%!important;
+                margin:3%;
+                align-items: center;
+                font-size: 16px;                
+                padding-top: 40px;   
+                max-height: 100px;
+                min-height: 100px;             
+            }
+            .countries{
+            
+              padding:40px 9%;
+            }
+        }
+        @media screen and (max-width: 550px) {
+            button{
+                margin-bottom: 10px;
+            }
+            .rowDiv{
+                flex-wrap: wrap;             
+
+            }
+            .countries{            
+               padding:40px 5%;
+            }
+            .tdDiv{
+                flex-wrap: wrap;               
+                max-width: 42% !important;
+                min-width: 42%!important;
+                margin:4%;
+                align-items: center;
+                font-size: 12px;
+                max-height: 80px;
+                min-height: 80px;
+                padding-top: 28px;                
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glob color">
+        <h1>World countries list</h1>
+        <h4 class="countriesTotal color"></h4>
+        <h5 class="countriesSearch"> </span></h5>
+        <div class="buttons">
+            <button class="startWith color transform" value="1">starting Word</button>
+            <button class="search_by color transform" value="2" >search with any word</button>
+            <button class="az color transform " value="3">a-z</button><br>
+            <input type="text" placeholder="Search country...."><i class="fa fa-search" aria-hidden="true"></i>
+
+
+        </div>
+        <div class="searchBar">          
+
+        </div>
+    </div>
+
+    <div class="countries">
+        <div class="countries1"></div>
+        
+    </div>
+
+    <script src="countries.js"></script>
+</body>
+</html>
